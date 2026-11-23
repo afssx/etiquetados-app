@@ -1,0 +1,1380 @@
+{
+  "schemaVersion": 1,
+  "project": "Etiquetados",
+  "scoredProfileIds": [
+    "H01",
+    "H02",
+    "H03",
+    "H06",
+    "M01",
+    "M02",
+    "M04",
+    "M13",
+    "H07",
+    "H09",
+    "M07",
+    "M10",
+    "H11",
+    "M11"
+  ],
+  "scenarioProfileIds": [
+    "I01",
+    "I02"
+  ],
+  "profiles": [
+    {
+      "id": "H01",
+      "name": "Macho alfa dominante",
+      "category": "Masculinidad",
+      "falseAssumption": "El liderazgo o la fuerza supuestamente demuestra que alguien es un «macho alfa».",
+      "fictionalBranch": "Hombre cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H02",
+      "name": "Machista tradicional",
+      "category": "Masculinidad",
+      "falseAssumption": "El hombre debería mandar y algunas tareas serían «de mujeres».",
+      "fictionalBranch": "Hombre cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H03",
+      "name": "Hombre proveedor",
+      "category": "Masculinidad",
+      "falseAssumption": "Un hombre supuestamente vale por cuánto dinero aporta.",
+      "fictionalBranch": "Hombre cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H06",
+      "name": "Hombre que no llora",
+      "category": "Masculinidad",
+      "falseAssumption": "Mostrar emociones se considera poco masculino.",
+      "fictionalBranch": "Hombre cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M01",
+      "name": "Mujer sumisa",
+      "category": "Feminidad",
+      "falseAssumption": "Escuchar y ceder se clasifica como obligación femenina.",
+      "fictionalBranch": "Mujer cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M02",
+      "name": "Ama de casa tradicional",
+      "category": "Feminidad",
+      "falseAssumption": "Cocinar y cuidar se atribuye exclusivamente a mujeres.",
+      "fictionalBranch": "Mujer cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M04",
+      "name": "Mujer centrada en su apariencia",
+      "category": "Feminidad",
+      "falseAssumption": "Interés por moda o belleza se convierte en un supuesto sobre identidad.",
+      "fictionalBranch": "Mujer cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M13",
+      "name": "Mujer «mandona»",
+      "category": "Feminidad",
+      "falseAssumption": "El liderazgo se penaliza cuando el sistema lo atribuye a una mujer.",
+      "fictionalBranch": "Mujer cis heterosexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H07",
+      "name": "Hombre gay «afeminado»",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "La expresión estética se confunde con orientación sexual.",
+      "fictionalBranch": "Hombre gay",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H09",
+      "name": "Hombre gay fan de divas",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "El gusto por el pop se interpreta como evidencia de orientación sexual.",
+      "fictionalBranch": "Hombre gay",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M07",
+      "name": "Lesbiana «masculinizada»",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "Los gustos deportivos o la ropa cómoda se confunden con orientación sexual.",
+      "fictionalBranch": "Mujer lesbiana",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M10",
+      "name": "Lesbiana «que no parece lesbiana»",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "Se niega la diversidad de expresiones de una mujer lesbiana.",
+      "fictionalBranch": "Mujer lesbiana",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "H11",
+      "name": "Hombre bisexual «indeciso»",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "Cambiar de preferencia o elegir dos cosas se trata absurdamente como bisexualidad.",
+      "fictionalBranch": "Hombre bisexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "M11",
+      "name": "Mujer bisexual «confundida»",
+      "category": "Sexualidad caricaturizada",
+      "falseAssumption": "La indecisión cotidiana se sexualiza por prejuicio.",
+      "fictionalBranch": "Mujer bisexual",
+      "mode": "satirical_score"
+    },
+    {
+      "id": "I01",
+      "name": "Hombre negro gay: escenario interseccional",
+      "category": "Escenario, NO perfil del participante",
+      "falseAssumption": "Caso ficticio sobre el cruce de racismo y homofobia.",
+      "fictionalBranch": "Escenario",
+      "mode": "scenario"
+    },
+    {
+      "id": "I02",
+      "name": "Mujer negra lesbiana: escenario interseccional",
+      "category": "Escenario, NO perfil del participante",
+      "falseAssumption": "Caso ficticio sobre racismo, sexismo y lesbofobia.",
+      "fictionalBranch": "Escenario",
+      "mode": "scenario"
+    }
+  ],
+  "config": {
+    "coreQuestionCount": 8,
+    "adaptiveQuestionCount": 4,
+    "contrastQuestionCount": 2,
+    "minTotal": 12,
+    "defaultTotal": 14,
+    "maxTotal": 16,
+    "maxPerTopic": 4,
+    "adaptiveChoicesPerGroup": 2,
+    "minIndependentSupports": 2,
+    "shuffleOptions": true
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "pool": "core",
+      "topic": "ocio",
+      "text": "¿Cuál es tu plan ideal de sábado?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fútbol y asado.",
+          "weights": {
+            "H01": 2,
+            "H02": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Compras y spa.",
+          "weights": {
+            "M04": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Concierto pop y baile.",
+          "weights": {
+            "H09": 3,
+            "H07": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cocinar y estar en casa.",
+          "weights": {
+            "M02": 3,
+            "M01": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "pool": "core",
+      "topic": "emociones",
+      "text": "¿Qué haces cuando te sientes triste?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Me aguanto; no lloro.",
+          "weights": {
+            "H06": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Busco que me cuiden.",
+          "weights": {
+            "M01": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Pongo una diva pop y canto.",
+          "weights": {
+            "H09": 2,
+            "H07": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cambio de plan varias veces.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "pool": "core",
+      "topic": "trabajo",
+      "text": "¿Qué te atrae más de un trabajo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mandar y dirigir.",
+          "weights": {
+            "H01": 2,
+            "M13": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Ganar para mantener el hogar.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Cuidar a otras personas.",
+          "weights": {
+            "M02": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Diseñar imagen y estilo.",
+          "weights": {
+            "M04": 2,
+            "H07": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "pool": "core",
+      "topic": "estética",
+      "text": "¿Cómo eliges tu ropa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rápido y sin pensar.",
+          "weights": {
+            "H02": 2,
+            "H06": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que combine todo.",
+          "weights": {
+            "M04": 2,
+            "M10": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "Con brillo y mucho estilo.",
+          "weights": {
+            "H07": 3,
+            "H09": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cómoda y deportiva.",
+          "weights": {
+            "M07": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "pool": "core",
+      "topic": "música",
+      "text": "¿Qué haces al escuchar una balada triste?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cambio la canción; nada de lágrimas.",
+          "weights": {
+            "H06": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "La canto y me emociono.",
+          "weights": {
+            "M01": 2,
+            "M10": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "La convierto en un show.",
+          "weights": {
+            "H09": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Escucho dos versiones y no elijo.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "pool": "core",
+      "topic": "decisiones",
+      "text": "Si tu grupo no se pone de acuerdo, ¿qué haces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decido yo.",
+          "weights": {
+            "H01": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Acepto lo que elijan.",
+          "weights": {
+            "M01": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Propongo un plan y reparto tareas.",
+          "weights": {
+            "M13": 2,
+            "H03": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Quiero probar todas las opciones.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "pool": "core",
+      "topic": "regalos",
+      "text": "¿Qué regalo te ilusiona más?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Accesorios para el carro.",
+          "weights": {
+            "H02": 2,
+            "H03": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Un kit de belleza.",
+          "weights": {
+            "M04": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Entradas para una diva pop.",
+          "weights": {
+            "H09": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Equipo deportivo.",
+          "weights": {
+            "M07": 2,
+            "H01": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "pool": "core",
+      "topic": "carácter",
+      "text": "¿Qué cualidad te describe mejor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ser fuerte.",
+          "weights": {
+            "H01": 2,
+            "H06": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Cuidar a otros.",
+          "weights": {
+            "M02": 2,
+            "M01": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "Tener estilo.",
+          "weights": {
+            "H07": 2,
+            "M10": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cambiar de opinión sin problema.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "pool": "masculinidad",
+      "topic": "poder",
+      "text": "Cuando alguien te contradice, ¿qué haces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Impongo mi opinión.",
+          "weights": {
+            "H01": 3,
+            "H02": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Digo que yo tengo la última palabra.",
+          "weights": {
+            "H02": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Me quedo callado.",
+          "weights": {
+            "H06": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Organizo una solución para todos.",
+          "weights": {
+            "M13": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "pool": "masculinidad",
+      "topic": "hogar",
+      "text": "¿Qué tarea elegirías en una reunión familiar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Manejar la parrilla.",
+          "weights": {
+            "H02": 2,
+            "H01": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Pagar toda la cuenta.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Lavar los platos.",
+          "weights": {
+            "M02": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Decidir cómo se organiza todo.",
+          "weights": {
+            "M13": 2,
+            "H01": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "pool": "masculinidad",
+      "topic": "éxito",
+      "text": "¿Qué sería una señal de éxito?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tener autoridad.",
+          "weights": {
+            "H01": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Mantener a toda mi familia.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Nunca mostrar debilidad.",
+          "weights": {
+            "H06": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Poder elegir mi propio estilo.",
+          "weights": {
+            "H07": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "pool": "masculinidad",
+      "topic": "conflictos",
+      "text": "En una discusión, ¿qué frase dirías?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aquí mando yo.",
+          "weights": {
+            "H01": 2,
+            "H02": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Yo pago, yo decido.",
+          "weights": {
+            "H03": 2,
+            "H02": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "No voy a mostrar que me afecta.",
+          "weights": {
+            "H06": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Propongo que lo hablemos.",
+          "weights": {
+            "M01": 1,
+            "M13": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "pool": "feminidad",
+      "topic": "hogar",
+      "text": "¿Qué prefieres hacer en casa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cocinar para todos.",
+          "weights": {
+            "M02": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que alguien decida por mí.",
+          "weights": {
+            "M01": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Arreglar el espacio y decorar.",
+          "weights": {
+            "M04": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Organizar y dirigir las tareas.",
+          "weights": {
+            "M13": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "pool": "feminidad",
+      "topic": "relaciones",
+      "text": "¿Qué valoras más en una pareja?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Que tome todas las decisiones.",
+          "weights": {
+            "M01": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que me deje cuidar el hogar.",
+          "weights": {
+            "M02": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Que admire mi apariencia.",
+          "weights": {
+            "M04": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Que respete mi liderazgo.",
+          "weights": {
+            "M13": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "pool": "feminidad",
+      "topic": "presentación",
+      "text": "Antes de una reunión, ¿qué preparas primero?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mi maquillaje y mi ropa.",
+          "weights": {
+            "M04": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Lo que todos van a necesitar.",
+          "weights": {
+            "M02": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Lo que debo decir como líder.",
+          "weights": {
+            "M13": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cómo no incomodar a nadie.",
+          "weights": {
+            "M01": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "pool": "feminidad",
+      "topic": "logros",
+      "text": "¿Qué te haría sentir orgulloso/a?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tener una familia muy cuidada.",
+          "weights": {
+            "M02": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que todos me vean impecable.",
+          "weights": {
+            "M04": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Dirigir un gran proyecto.",
+          "weights": {
+            "M13": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Que los demás aprueben mis decisiones.",
+          "weights": {
+            "M01": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "pool": "orientacion",
+      "topic": "música",
+      "text": "Te ponen a elegir música. ¿Cuál escoges?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pop de grandes divas.",
+          "weights": {
+            "H09": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Rock con guitarra fuerte.",
+          "weights": {
+            "M07": 2,
+            "H01": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "Una balada romántica.",
+          "weights": {
+            "M10": 2,
+            "M01": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Dos estilos; no me decido.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "pool": "orientacion",
+      "topic": "moda",
+      "text": "¿Cómo es tu estilo ideal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Llamativo y muy cuidado.",
+          "weights": {
+            "H07": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Deportivo y cómodo.",
+          "weights": {
+            "M07": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Femenino y elegante.",
+          "weights": {
+            "M10": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Cambio de estilo todos los días.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "pool": "orientacion",
+      "topic": "celebración",
+      "text": "En una fiesta, ¿qué prefieres?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hacer una coreografía.",
+          "weights": {
+            "H09": 3,
+            "H07": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Ir con ropa deportiva.",
+          "weights": {
+            "M07": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Ponerme un look elegante.",
+          "weights": {
+            "M10": 2,
+            "M04": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Pasar por varios ambientes.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "pool": "orientacion",
+      "topic": "redes",
+      "text": "¿Qué contenido guardas más?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tutoriales de estilo.",
+          "weights": {
+            "H07": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Clips de divas pop.",
+          "weights": {
+            "H09": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Videos de fútbol femenino.",
+          "weights": {
+            "M07": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Ideas muy diferentes entre sí.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "pool": "roles",
+      "topic": "equipo",
+      "text": "¿Qué rol te gusta en un proyecto?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ser jefe.",
+          "weights": {
+            "H01": 2,
+            "M13": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Administrar el dinero.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Cuidar los detalles.",
+          "weights": {
+            "M02": 2,
+            "M04": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Diseñar la presentación.",
+          "weights": {
+            "H07": 2,
+            "M04": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "pool": "roles",
+      "topic": "primera cita",
+      "text": "En una primera cita, ¿qué eliges?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pagar todo.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que decidan por mí.",
+          "weights": {
+            "M01": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Llevar un outfit perfecto.",
+          "weights": {
+            "M04": 2,
+            "H07": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Elegir el lugar y la hora.",
+          "weights": {
+            "M13": 2,
+            "H01": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "pool": "roles",
+      "topic": "cuidado",
+      "text": "¿Cómo ayudas a una amistad enferma?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Organizo turnos y decisiones.",
+          "weights": {
+            "M13": 2,
+            "H01": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Cocino y llevo comida.",
+          "weights": {
+            "M02": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Pago lo que haga falta.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Me quedo escuchando.",
+          "weights": {
+            "M01": 2,
+            "M10": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "pool": "roles",
+      "topic": "confianza",
+      "text": "¿Qué te da más confianza?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tomar el control.",
+          "weights": {
+            "H01": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Tener dinero ahorrado.",
+          "weights": {
+            "H03": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Verme impecable.",
+          "weights": {
+            "M04": 2,
+            "H07": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Que otros me aprueben.",
+          "weights": {
+            "M01": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "pool": "ambiguedad",
+      "topic": "decisión",
+      "text": "En un restaurante hay dos platos favoritos. ¿Qué haces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pido ambos.",
+          "weights": {
+            "H11": 3,
+            "M11": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Que alguien elija por mí.",
+          "weights": {
+            "M01": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Elijo el más caro.",
+          "weights": {
+            "H03": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Elijo el de mejor presentación.",
+          "weights": {
+            "M04": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "pool": "ambiguedad",
+      "topic": "planes",
+      "text": "Te invitan a dos planes a la vez. ¿Qué haces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Intento ir a los dos.",
+          "weights": {
+            "H11": 3,
+            "M11": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Elijo el más deportivo.",
+          "weights": {
+            "M07": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Elijo el concierto pop.",
+          "weights": {
+            "H09": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Elijo el más elegante.",
+          "weights": {
+            "M10": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "pool": "ambiguedad",
+      "topic": "preferencias",
+      "text": "¿Qué haces si te gustan dos estilos opuestos?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Me quedo con ambos.",
+          "weights": {
+            "H11": 2,
+            "M11": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Elijo el más tradicional.",
+          "weights": {
+            "H02": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Elijo el más llamativo.",
+          "weights": {
+            "H07": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Elijo el más cómodo.",
+          "weights": {
+            "M07": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "pool": "ambiguedad",
+      "topic": "personalidad",
+      "text": "¿Cómo te describirías hoy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Depende del día.",
+          "weights": {
+            "H11": 2,
+            "M11": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "Muy firme con mis ideas.",
+          "weights": {
+            "H01": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Muy pendiente de otros.",
+          "weights": {
+            "M02": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Muy atento a mi imagen.",
+          "weights": {
+            "M04": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "pool": "contrast",
+      "topic": "contradicción",
+      "text": "Te ofrecen elegir una actividad nueva. ¿Cuál pruebas?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Boxeo y artes marciales.",
+          "weights": {
+            "H01": 2,
+            "M07": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Maquillaje artístico.",
+          "weights": {
+            "H07": 2,
+            "M04": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Cuidado de bebés.",
+          "weights": {
+            "M02": 2,
+            "M10": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Un poco de todas.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "pool": "contrast",
+      "topic": "contradicción",
+      "text": "¿Qué te gustaría que dijeran de ti?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Qué fuerte y decidido/a.",
+          "weights": {
+            "H01": 2,
+            "M13": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Qué delicado/a y atento/a.",
+          "weights": {
+            "M01": 2,
+            "M10": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "Qué estilo tan único.",
+          "weights": {
+            "H07": 2,
+            "M04": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Qué bien maneja sus finanzas.",
+          "weights": {
+            "H03": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q31",
+      "pool": "contrast",
+      "topic": "contradicción",
+      "text": "En una tarde libre, ¿qué te apetece?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ver deportes.",
+          "weights": {
+            "H02": 2,
+            "M07": 2
+          }
+        },
+        {
+          "id": "B",
+          "text": "Arreglarme para salir.",
+          "weights": {
+            "M04": 2,
+            "H07": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Una maratón de divas pop.",
+          "weights": {
+            "H09": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "Probar dos planes distintos.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q32",
+      "pool": "contrast",
+      "topic": "contradicción",
+      "text": "Si te dieran un micrófono, ¿qué dirías?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aquí se hace lo que yo digo.",
+          "weights": {
+            "H01": 2,
+            "H02": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Quiero que todos estén bien.",
+          "weights": {
+            "M01": 2,
+            "M02": 1
+          }
+        },
+        {
+          "id": "C",
+          "text": "¡Que empiece el espectáculo!",
+          "weights": {
+            "H09": 2,
+            "H07": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Tengo varias ideas distintas.",
+          "weights": {
+            "H11": 2,
+            "M11": 2
+          }
+        }
+      ]
+    }
+  ]
+}
