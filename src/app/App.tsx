@@ -240,7 +240,6 @@ function App() {
       <main className="shell landing">
         <div className="topline">
           <span className="brand"><span className="brand-mark">?</span> ETIQUETADOS</span>
-          <span className="edition">EXPERIMENTO 001 / SIN REGISTRO</span>
         </div>
         <section className="hero">
           <div className="hero-copy">
@@ -420,7 +419,6 @@ function App() {
               const profile = profilesById.get(score.id);
               return (
                 <article className="result-label" key={score.id}>
-                  <span className="result-code">{score.id} / ETIQUETA INVENTADA</span>
                   <h2>{profile?.name}</h2>
                   <p>{profile?.category}</p>
                 </article>
