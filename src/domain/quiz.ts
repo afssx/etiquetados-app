@@ -1,6 +1,7 @@
 import rawBank from "../data/questions.json";
 
 export type AnswerId = "A" | "B" | "C" | "D";
+export type QuizLength = 12 | 14;
 export type QuestionPool =
   | "core"
   | "masculinidad"
@@ -8,6 +9,7 @@ export type QuestionPool =
   | "orientacion"
   | "roles"
   | "ambiguedad"
+  | "ruptura"
   | "contrast";
 
 export interface Option {
@@ -31,6 +33,8 @@ export interface Profile {
   falseAssumption: string;
   fictionalBranch: string;
   mode: "satirical_score" | "scenario";
+  satiricalDescription?: string;
+  correction?: string;
 }
 
 export interface QuestionBank {
@@ -64,6 +68,7 @@ const ADAPTIVE_POOLS: QuestionPool[] = [
   "orientacion",
   "roles",
   "ambiguedad",
+  "ruptura",
 ];
 const PROFILE_GROUPS: Record<Exclude<QuestionPool, "core" | "contrast">, string[]> = {
   masculinidad: ["H01", "H02", "H03", "H06"],
@@ -71,6 +76,7 @@ const PROFILE_GROUPS: Record<Exclude<QuestionPool, "core" | "contrast">, string[
   orientacion: ["H07", "H09", "M07", "M10"],
   roles: ["H01", "H03", "M01", "M02", "M13", "M04"],
   ambiguedad: ["H11", "M11"],
+  ruptura: ["M16", "M13"],
 };
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -86,12 +92,12 @@ function isQuestionBank(value: unknown): value is QuestionBank {
     !Array.isArray(scoredProfileIds) ||
     !Array.isArray(scenarioProfileIds) ||
     !Array.isArray(profiles) ||
-    profiles.length !== 16 ||
+    profiles.length !== 17 ||
     !Array.isArray(questions) ||
     !isRecord(config) ||
     config.defaultTotal !== 14 ||
-    questions.length !== 32 ||
-    scoredProfileIds.length !== 14 ||
+    questions.length !== 36 ||
+    scoredProfileIds.length !== 15 ||
     scenarioProfileIds.length !== 2
   ) {
     return false;
@@ -100,7 +106,7 @@ function isQuestionBank(value: unknown): value is QuestionBank {
   const scoredIds = new Set(scoredProfileIds);
   const scenarioIds = new Set(scenarioProfileIds);
   if (
-    scoredIds.size !== 14 ||
+    scoredIds.size !== 15 ||
     scenarioIds.size !== 2 ||
     [...scoredIds].some((id) => scenarioIds.has(id))
   ) {
@@ -117,6 +123,8 @@ function isQuestionBank(value: unknown): value is QuestionBank {
       typeof profile.category !== "string" ||
       typeof profile.falseAssumption !== "string" ||
       typeof profile.fictionalBranch !== "string" ||
+      (profile.satiricalDescription !== undefined && typeof profile.satiricalDescription !== "string") ||
+      (profile.correction !== undefined && typeof profile.correction !== "string") ||
       !["satirical_score", "scenario"].includes(String(profile.mode))
     ) {
       return false;
@@ -194,7 +202,7 @@ function isQuestionBank(value: unknown): value is QuestionBank {
 export function validateQuestionBank(value: unknown): QuestionBank {
   if (!isQuestionBank(value)) {
     throw new Error(
-      "El banco de preguntas no cumple el esquema esperado (32 preguntas, opciones A–D y perfiles válidos).",
+      "El banco de preguntas no cumple el esquema esperado (36 preguntas, opciones A–D y perfiles válidos).",
     );
   }
   return value;
@@ -277,7 +285,7 @@ export function selectNextQuestions(
   bank: QuestionBank,
   seed: number,
   answers: Readonly<Record<string, AnswerId>>,
-  targetTotal: 12 | 14 | 16,
+  targetTotal: QuizLength,
 ): string[] {
   const coreIds = bank.questions.filter((question) => question.pool === "core").map(({ id }) => id);
   const coreScores = scoreQuiz(bank, coreIds, answers);

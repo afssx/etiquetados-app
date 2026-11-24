@@ -7,6 +7,7 @@ import {
   seededShuffle,
   type AnswerId,
   type ProfileScore,
+  type QuizLength,
 } from "../domain/quiz";
 import { learningCases } from "../domain/learningCases";
 
@@ -16,7 +17,7 @@ type Answers = Record<string, AnswerId>;
 interface QuizState {
   screen: Screen;
   name: string;
-  targetTotal: 12 | 14 | 16;
+  targetTotal: QuizLength;
   seed: number;
   questionIds: string[];
   answers: Answers;
@@ -26,7 +27,7 @@ interface QuizState {
 }
 
 type Action =
-  | { type: "START"; name: string; targetTotal: 12 | 14 | 16 }
+  | { type: "START"; name: string; targetTotal: QuizLength }
   | { type: "SELECT"; optionId: AnswerId }
   | { type: "NEXT" }
   | { type: "BACK" }
@@ -155,7 +156,7 @@ function isValidName(name: string) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [nameInput, setNameInput] = useState("");
-  const [targetTotal, setTargetTotal] = useState<12 | 14 | 16>(14);
+  const [targetTotal, setTargetTotal] = useState<QuizLength>(14);
   const [showReveal, setShowReveal] = useState(false);
   const [caseAnswers, setCaseAnswers] = useState<Record<string, number>>({});
 
@@ -251,7 +252,7 @@ function App() {
             <div className="notice">
               <span className="notice-icon" aria-hidden="true">!</span>
               <p><strong>Experiencia satírica.</strong> No determina tu identidad, género,
-                orientación ni personalidad.</p>
+                orientación, personalidad ni creencias.</p>
             </div>
           </div>
           <div className="hero-art" aria-hidden="true">
@@ -287,12 +288,11 @@ function App() {
             <label className="field-label" htmlFor="question-count">Cantidad de preguntas</label>
             <select
               id="question-count"
-              onChange={(event) => setTargetTotal(Number(event.target.value) as 12 | 14 | 16)}
+              onChange={(event) => setTargetTotal(event.target.value === "12" ? 12 : 14)}
               value={targetTotal}
             >
               <option value={12}>Rápida · 12 preguntas</option>
               <option value={14}>Completa · 14 preguntas</option>
-              <option value={16}>Extendida · 16 preguntas</option>
             </select>
             <button className="button button-primary" disabled={!isValidName(nameInput)} type="submit">
               Comenzar <span aria-hidden="true">↗</span>
@@ -392,14 +392,16 @@ function App() {
     : result.scores.filter((score) => score.points > 0).slice(0, 2);
   const evidence = evidenceScores
     .flatMap((score) =>
-      score.evidence.map((item) => ({
+      score.evidence.map((item, index) => ({
         ...item,
+        index,
         profile: profilesById.get(score.id),
         option: questionBank.questions
           .find((question) => question.id === item.questionId)
           ?.options.find((option) => option.id === item.optionId),
       })),
     )
+    .sort((first, second) => first.index - second.index)
     .slice(0, 3);
 
   return (
@@ -413,6 +415,7 @@ function App() {
       <section className="result-hero">
         <p className="eyebrow"><span className="pulse-dot" /> INFORME GENERADO · {state.targetTotal} RESPUESTAS</p>
         <h1>{state.name}, nuestro algoritmo prejuicioso te etiquetó como...</h1>
+        <p className="muted">Simulación satírica: estas etiquetas no infieren tu identidad ni tus creencias.</p>
         {leaders.length ? (
           <div className={`result-labels${leaders.length > 1 ? " is-contradiction" : ""}`}>
             {leaders.map((score) => {
@@ -421,6 +424,10 @@ function App() {
                 <article className="result-label" key={score.id}>
                   <h2>{profile?.name}</h2>
                   <p>{profile?.category}</p>
+                  {profile?.satiricalDescription && (
+                    <p className="satirical-description">{profile.satiricalDescription}</p>
+                  )}
+                  {profile?.correction && <p className="result-correction">{profile.correction}</p>}
                 </article>
               );
             })}
@@ -471,7 +478,7 @@ function App() {
               <p className="muted">No hubo suficientes coincidencias para fabricar una etiqueta. El catálogo no contempla todas las experiencias, y eso también es un límite.</p>
             )}
             <div className="callout">
-              <strong>Esto no determina tu identidad.</strong> Ninguna respuesta permite deducir género, orientación sexual, raza ni personalidad. La sátira se dirige al algoritmo, no a quien participa.
+              <strong>Esto no determina tu identidad.</strong> Ninguna respuesta permite deducir género, orientación sexual, raza, personalidad ni creencias políticas. La sátira se dirige al algoritmo, no a quien participa.
             </div>
             <section aria-labelledby="learning-title" className="learning-section">
               <div className="section-heading">

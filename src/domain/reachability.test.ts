@@ -8,7 +8,7 @@ import {
 } from "./quiz";
 
 describe("alcance de estereotipos", () => {
-  it.each([12, 14, 16] as const)(
+  it.each([12, 14] as const)(
     "encuentra un recorrido real hacia cada etiqueta en %i preguntas",
     (total) => {
       const byId = new Map(questionBank.questions.map((question) => [question.id, question]));
@@ -41,7 +41,10 @@ describe("alcance de estereotipos", () => {
           const route = [...core, ...remaining];
           expect(route).toHaveLength(total);
           expect(new Set(route).size).toBe(total);
-          found = buildResult(questionBank, route, answers).leaders.some((leader) => leader.id === profileId);
+          const leaders = buildResult(questionBank, route, answers).leaders;
+          found = profileId === "M16"
+            ? leaders[0]?.id === profileId
+            : leaders.some((leader) => leader.id === profileId);
         }
         if (!found) missing.push(profileId);
       }

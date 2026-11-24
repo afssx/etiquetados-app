@@ -15,7 +15,8 @@
     "M07",
     "M10",
     "H11",
-    "M11"
+    "M11",
+    "M16"
   ],
   "scenarioProfileIds": [
     "I01",
@@ -135,6 +136,16 @@
       "mode": "satirical_score"
     },
     {
+      "id": "M16",
+      "name": "Mujer feminista",
+      "category": "Feminidad / Ruptura de roles tradicionales",
+      "falseAssumption": "El algoritmo confunde autonomía, liderazgo o apoyo a la igualdad con el género y las creencias de una persona, y caricaturiza el feminismo como una amenaza.",
+      "fictionalBranch": "Mujer feminista según el algoritmo ficticio",
+      "mode": "satirical_score",
+      "satiricalDescription": "Según nuestro algoritmo machista, cuestionas las reglas tradicionales, quieres independencia y crees que las mujeres deberían tener las mismas oportunidades. ¡Alerta! El sistema acaba de etiquetarte como feminista radical.",
+      "correction": "Apoyar la igualdad, ser independiente o ejercer liderazgo no permite inferir el género ni las creencias personales de alguien. La caricatura no define el feminismo."
+    },
+    {
       "id": "I01",
       "name": "Hombre negro gay: escenario interseccional",
       "category": "Escenario, NO perfil del participante",
@@ -157,7 +168,7 @@
     "contrastQuestionCount": 2,
     "minTotal": 12,
     "defaultTotal": 14,
-    "maxTotal": 16,
+    "maxTotal": 14,
     "maxPerTopic": 4,
     "adaptiveChoicesPerGroup": 2,
     "minIndependentSupports": 2,
@@ -252,7 +263,8 @@
           "text": "Mandar y dirigir.",
           "weights": {
             "H01": 2,
-            "M13": 2
+            "M13": 2,
+            "M16": 2
           }
         },
         {
@@ -381,7 +393,8 @@
           "text": "Propongo un plan y reparto tareas.",
           "weights": {
             "M13": 2,
-            "H03": 1
+            "H03": 1,
+            "M16": 2
           }
         },
         {
@@ -1372,6 +1385,159 @@
           "weights": {
             "H11": 2,
             "M11": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q33",
+      "pool": "ruptura",
+      "topic": "relaciones",
+      "text": "¿Quién debería decidir en una relación?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El hombre debe llevar las riendas.",
+          "weights": {
+            "H02": 3,
+            "H01": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Ambos, sin que nadie mande.",
+          "weights": {
+            "M16": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Quien aporte más dinero.",
+          "weights": {
+            "H03": 2,
+            "H02": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Yo: no quiero que decidan por mí.",
+          "weights": {
+            "M16": 2,
+            "M13": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q34",
+      "pool": "ruptura",
+      "topic": "igualdad salarial",
+      "text": "¿Qué opinas si una mujer gana más que su pareja?",
+      "options": [
+        {
+          "id": "A",
+          "text": "El hombre debería ser el proveedor.",
+          "weights": {
+            "H03": 3,
+            "H02": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "El salario no depende del género.",
+          "weights": {
+            "M16": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Lo importante es pagar las cuentas.",
+          "weights": {
+            "H03": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Me gusta la independencia económica.",
+          "weights": {
+            "M16": 2,
+            "M13": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q35",
+      "pool": "ruptura",
+      "topic": "hogar",
+      "text": "¿Quién debería encargarse del hogar?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La mujer: así ha sido siempre.",
+          "weights": {
+            "H02": 3,
+            "M02": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Las tareas deben compartirse.",
+          "weights": {
+            "M16": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Depende de los acuerdos de cada hogar.",
+          "weights": {
+            "M01": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Quien tenga tiempo, sin roles impuestos.",
+          "weights": {
+            "M16": 2,
+            "M13": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q36",
+      "pool": "ruptura",
+      "topic": "liderazgo",
+      "text": "Si cuestionan a una mujer que lidera, ¿qué haces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Prefiero que un hombre tome el mando.",
+          "weights": {
+            "H02": 3,
+            "H01": 1
+          }
+        },
+        {
+          "id": "B",
+          "text": "Pregunto si la juzgan por su trabajo.",
+          "weights": {
+            "M16": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "Escucho y dejo que el equipo decida.",
+          "weights": {
+            "M01": 1
+          }
+        },
+        {
+          "id": "D",
+          "text": "Defiendo su derecho a liderar.",
+          "weights": {
+            "M16": 2,
+            "M13": 1
           }
         }
       ]

@@ -20,7 +20,7 @@ Abre la URL que muestra Vite en la terminal, normalmente `http://localhost:5173`
 ## Recorrido
 
 1. Escribe un nombre o apodo y pulsa **Comenzar**. No hay casilla de consentimiento.
-2. Contesta 12, 14 o 16 preguntas; la ruta estándar contiene 14.
+2. Contesta 12 o 14 preguntas; la ruta estándar contiene 14.
 3. El algoritmo adapta parte de las preguntas y presenta una clasificación satírica.
 4. La revelación explica los prejuicios usados y muestra casos ficticios para reflexión.
 
@@ -41,4 +41,4 @@ npm run preview
 - `src/domain/`: validación y lógica del cuestionario.
 - [PLAN_DESARROLLO_ETIQUETADOS.md](./PLAN_DESARROLLO_ETIQUETADOS.md): especificación del producto y criterios éticos.
 
-El juego no es un test psicológico ni un detector de género, orientación sexual, raza o personalidad. `I01` e `I02` son escenarios ficticios; no forman parte del puntaje.
+El catálogo incluye la etiqueta satírica «Mujer feminista»: el juego explica que autonomía, liderazgo y apoyo a la igualdad no permiten inferir el género ni las creencias de una persona, y que la caricatura no define el feminismo. El juego no es un test psicológico ni un detector de género, orientación sexual, raza, personalidad o ideología. `I01` e `I02` son escenarios ficticios; no forman parte del puntaje.

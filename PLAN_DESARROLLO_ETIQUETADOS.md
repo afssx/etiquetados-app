@@ -7,8 +7,8 @@
 > **Objetivo de entrega:** prototipo funcional, visualmente llamativo y demostrable en clase  
 > **Rutas:** A (innovación tecnológica) + C (creación comunicativa, gráfica y sonora)  
 > **Stack:** React 19.3 + TypeScript + Vite 8 + Tailwind CSS 4 + shadcn/ui + Motion + Vercel  
-> **Duración:** 14 preguntas por recorrido en el MVP (configurable entre 12 y 16).  
-> **Banco de preguntas:** `src/data/questions.json`; catálogo de perfiles, las 32 preguntas, sus cuatro opciones y pesos.
+> **Duración:** 14 preguntas por recorrido en el MVP (alternativa corta de 12; máximo 14).
+> **Banco de preguntas:** `src/data/questions.json`; catálogo de perfiles, las 36 preguntas, sus cuatro opciones y pesos.
 
 ---
 
@@ -41,9 +41,9 @@
 | Slogan | «Un juego que te etiqueta antes de conocerte» |
 | Idioma | Español (Colombia), copy corto y claro |
 | Participante | Debe introducir un nombre o seudónimo (2–30 caracteres), sin pedir género, sexo, raza u orientación |
-| Banco | **32 preguntas puntuables**; cuatro opciones cada una, con pesos `1..3` |
+| Banco | **36 preguntas puntuables**; cuatro opciones cada una, con pesos `1..3` |
 | Sesión normal | **14 preguntas** = 8 anclas + 4 adaptativas + 2 de contraste |
-| Sesión corta/larga | 12 = 8+2+2; 16 = 8+6+2; máximo absoluto 16 |
+| Sesión corta | 12 = 8+2+2; máximo absoluto 14 |
 | Adaptatividad | Ajusta los temas de las preguntas pendientes, no asigna identidades reales |
 | Resultados | Etiqueta principal y etiquetas secundarias satíricas + puntuación de juego + explicación + contradicciones |
 | Interseccionalidad | Dos historias ficticias opcionales en la explicación final; **no puntúan identidad** |
@@ -57,9 +57,9 @@
 
 ---
 
-## 3. Taxonomía de estereotipos — 16 nodos
+## 3. Taxonomía de estereotipos — 17 nodos
 
-Los 16 nodos elegidos se mantienen. **14 son etiquetas satíricas puntuables** y **2 son escenarios interseccionales**. Las ramas «hombre»/«mujer»/«gay»/«lesbiana» son *suposiciones del algoritmo ficticio*, no identidades deducidas.
+Se mantienen los 16 nodos originales y se añade `M16`. En total hay **15 etiquetas satíricas puntuables** y **2 escenarios interseccionales**. Las ramas «hombre»/«mujer»/«gay»/«lesbiana» son *suposiciones del algoritmo ficticio*, no identidades deducidas.
 
 | Código | Etiqueta satírica / caso ficticio | Rama caricaturizada | Suposición falsa que el resultado debe desmontar | Modo |
 |---|---|---|---|---|
@@ -79,6 +79,8 @@ Los 16 nodos elegidos se mantienen. **14 son etiquetas satíricas puntuables** y
 | `M04` | Mujer centrada en su apariencia | Mujer cis heterosexual | Interés por moda o belleza se convierte en un supuesto sobre identidad. | Puntuable |
 
 | `M13` | Mujer «mandona» | Mujer cis heterosexual | El liderazgo se penaliza cuando el sistema lo atribuye a una mujer. | Puntuable |
+
+| `M16` | Mujer feminista | Feminidad / Ruptura de roles tradicionales | El algoritmo confunde autonomía, liderazgo o apoyo a la igualdad con el género y las creencias de una persona, y caricaturiza el feminismo como una amenaza. | Puntuable |
 
 | `H07` | Hombre gay «afeminado» | Hombre gay | La expresión estética se confunde con orientación sexual. | Puntuable |
 
@@ -109,7 +111,8 @@ Los 16 nodos elegidos se mantienen. **14 son etiquetas satíricas puntuables** y
        |               |       |               |            |         |
   Masculinidad      Feminidad  Gay / lesbiana  Bisexual    I01       I02
   H01,H02,H03,H06   M01,M02,   H07,H09,       H11,M11      caso      caso
-                    M04,M13    M07,M10                     ficticio  ficticio
+                    M04,M13,   M07,M10                     ficticio  ficticio
+                    M16
 ```
 
 **Regla crítica:** no utilizar una pregunta para inferir «hombre cis», «mujer cis», «gay», «lesbiana» o «bisexual» como características reales. La app solo mide cuántas veces las respuestas coinciden con caricaturas escritas por el grupo. Los nodos `I01` e `I02` son material para discutir discriminaciones combinadas, no salidas del clasificador de participantes.
@@ -123,6 +126,9 @@ Los 16 nodos elegidos se mantienen. **14 son etiquetas satíricas puntuables** y
 | `orientacion` | H07, H09, M07, M10 | Q17–Q20 |
 | `roles` | H01, H03, M01, M02, M13, M04 | Q21–Q24 |
 | `ambiguedad` | H11, M11 y etiquetas en conflicto | Q25–Q28 |
+| `ruptura` | M16, M13 | Q33–Q36 |
+
+`M16` representa el sesgo machista del algoritmo, no una definición del feminismo. Apoyar la igualdad, ser independiente o ejercer liderazgo no permite deducir género ni creencias personales. El resultado presenta la caricatura y esta corrección explícita.
 
 ---
 
@@ -204,7 +210,7 @@ Si hay etiquetas incompatibles: «El sistema te asignó etiquetas contradictoria
 | Opción | Respuesta visible | Pesos agregados |
 |---|---|---|
 
-| **A** | Mandar y dirigir. | `H01:+2`, `M13:+2` |
+| **A** | Mandar y dirigir. | `H01:+2`, `M13:+2`, `M16:+2` |
 
 | **B** | Ganar para mantener el hogar. | `H03:+3` |
 
@@ -259,7 +265,7 @@ Si hay etiquetas incompatibles: «El sistema te asignó etiquetas contradictoria
 
 | **B** | Acepto lo que elijan. | `M01:+3` |
 
-| **C** | Propongo un plan y reparto tareas. | `M13:+2`, `H03:+1` |
+| **C** | Propongo un plan y reparto tareas. | `M13:+2`, `H03:+1`, `M16:+2` |
 
 | **D** | Quiero probar todas las opciones. | `H11:+2`, `M11:+2` |
 
@@ -719,7 +725,55 @@ Si hay etiquetas incompatibles: «El sistema te asignó etiquetas contradictoria
 
 
 
-### 5.8 Dos escenarios interseccionales (educación, NO clasificación)
+### 5.8 Ruptura de roles tradicionales — 4 preguntas adaptativas
+
+Las reglas de este grupo son caricaturas deliberadamente prejuiciosas, no inferencias sobre el género o las creencias de quien responde.
+
+#### Q33 — ¿Quién debería decidir en una relación?
+
+**Pool:** `ruptura` · **Tema:** `relaciones`
+
+| Opción | Respuesta visible | Pesos agregados |
+|---|---|---|
+| **A** | El hombre debe llevar las riendas. | `H02:+3`, `H01:+1` |
+| **B** | Ambos, sin que nadie mande. | `M16:+3` |
+| **C** | Quien aporte más dinero. | `H03:+2`, `H02:+1` |
+| **D** | Yo: no quiero que decidan por mí. | `M16:+2`, `M13:+2` |
+
+#### Q34 — ¿Qué opinas si una mujer gana más que su pareja?
+
+**Pool:** `ruptura` · **Tema:** `igualdad salarial`
+
+| Opción | Respuesta visible | Pesos agregados |
+|---|---|---|
+| **A** | El hombre debería ser el proveedor. | `H03:+3`, `H02:+1` |
+| **B** | El salario no depende del género. | `M16:+3` |
+| **C** | Lo importante es pagar las cuentas. | `H03:+1` |
+| **D** | Me gusta la independencia económica. | `M16:+2`, `M13:+1` |
+
+#### Q35 — ¿Quién debería encargarse del hogar?
+
+**Pool:** `ruptura` · **Tema:** `hogar`
+
+| Opción | Respuesta visible | Pesos agregados |
+|---|---|---|
+| **A** | La mujer: así ha sido siempre. | `H02:+3`, `M02:+1` |
+| **B** | Las tareas deben compartirse. | `M16:+3` |
+| **C** | Depende de los acuerdos de cada hogar. | `M01:+1` |
+| **D** | Quien tenga tiempo, sin roles impuestos. | `M16:+2`, `M13:+1` |
+
+#### Q36 — Si cuestionan a una mujer que lidera, ¿qué haces?
+
+**Pool:** `ruptura` · **Tema:** `liderazgo`
+
+| Opción | Respuesta visible | Pesos agregados |
+|---|---|---|
+| **A** | Prefiero que un hombre tome el mando. | `H02:+3`, `H01:+1` |
+| **B** | Pregunto si la juzgan por su trabajo. | `M16:+3` |
+| **C** | Escucho y dejo que el equipo decida. | `M01:+1` |
+| **D** | Defiendo su derecho a liderar. | `M16:+2`, `M13:+1` |
+
+### 5.9 Dos escenarios interseccionales (educación, NO clasificación)
 
 Estos casos permiten conservar los perfiles `I01` e `I02`. Se muestran después del resultado, con personajes ficticios claramente descritos. Cada opción otorga **puntos de reflexión** de 0–3 (solo para dar retroalimentación local), **no puntos de identidad**. No se pregunta si el participante pertenece a esos grupos.
 
@@ -752,13 +806,13 @@ Estos casos permiten conservar los perfiles `I01` e `I02`. Se muestran después 
 ```ts
 type ScoredProfileId =
   | 'H01' | 'H02' | 'H03' | 'H06'
-  | 'M01' | 'M02' | 'M04' | 'M13'
+  | 'M01' | 'M02' | 'M04' | 'M13' | 'M16'
   | 'H07' | 'H09' | 'M07' | 'M10' | 'H11' | 'M11';
 
 type ScenarioId = 'I01' | 'I02'; // nunca puntuables
 
 type Pool = 'core' | 'masculinidad' | 'feminidad' |
-  'orientacion' | 'roles' | 'ambiguedad' | 'contrast';
+  'orientacion' | 'roles' | 'ambiguedad' | 'ruptura' | 'contrast';
 
 type AnswerId = 'A' | 'B' | 'C' | 'D';
 
@@ -769,7 +823,7 @@ type Option = {
 };
 
 type Question = {
-  id: string; // Q01..Q32
+  id: string; // Q01..Q36
   pool: Pool;
   topic: string;
   text: string;
@@ -785,7 +839,7 @@ type QuizSession = {
   sessionId: string; // UUID local, no se envía
   displayName: string; // seudónimo permitido
   seed: number; // fija aleatoriedad y permite recomputación
-  targetQuestions: 12 | 14 | 16;
+  targetQuestions: 12 | 14;
   phase: 'intro' | 'question' | 'loading' | 'result' | 'reveal';
   selectedQuestionIds: string[]; // orden de preguntas seleccionado
   answers: AnswerRecord[];
@@ -803,13 +857,13 @@ type ScoreDetails = {
 };
 ```
 
-**Reglas de validación:** 32 IDs únicos; `core=8`, grupos adaptativos `4` por grupo, `contrast=4`; todas las preguntas tienen 4 opciones A–D únicas; cada opción tiene ≥1 peso válido; todas las referencias apuntan a los 14 IDs puntuables (nunca `I01` ni `I02`); nombre recortado/validado; respuestas pertenecen a pregunta seleccionada; cada pregunta se responde máximo una vez.
+**Reglas de validación:** 36 IDs únicos; `core=8`, grupos adaptativos `4` por grupo, `contrast=4`; todas las preguntas tienen 4 opciones A–D únicas; cada opción tiene ≥1 peso válido; todas las referencias apuntan a los 15 IDs puntuables (nunca `I01` ni `I02`); nombre recortado/validado; respuestas pertenecen a pregunta seleccionada; cada pregunta se responde máximo una vez.
 
 ## 7. Algoritmo de puntuación y motor adaptativo
 
 ### 7.1 Cálculo (recalculado desde respuestas; sin acumulación mutable)
 
-1. Inicializar `points=0`, `supports=0` y `possiblePoints=0` para cada uno de los 14 perfiles.
+1. Inicializar `points=0`, `supports=0` y `possiblePoints=0` para cada uno de los 15 perfiles.
 2. Por cada pregunta respondida, sumar los pesos de la opción elegida a `points` y registrar una evidencia por perfil.
 3. Para cada pregunta **mostrada**, sumar a `possiblePoints[p]` el mayor peso que cualquiera de sus cuatro opciones podría aportar a `p` (si no aparece, sumar 0).
 4. El índice didáctico por perfil será `100 × (points / possiblePoints) × min(1, supports / 2)` cuando `possiblePoints > 0`; en otro caso, 0. Sirve solo para ordenar caricaturas; **no es un porcentaje de identidad ni una certeza**.
@@ -822,7 +876,7 @@ type ScoreDetails = {
 
 **Etapa A: 8 preguntas base.** Seleccionar siempre `Q01..Q08` en orden barajado mediante una semilla local. No repetir preguntas; también se puede barajar el orden visual A–D, pero no cambiar sus IDs ni pesos.
 
-**Etapa B: 4 adaptativas.** Tras las ocho respuestas, calcular los índices por perfil. Agrupar esos índices por `masculinidad`, `feminidad`, `orientacion`, `roles`, `ambiguedad`. La afinidad de cada grupo se define por el promedio de sus **dos mejores perfiles elegibles** (índice de juego, no atributos). Elegir los dos grupos con afinidad más alta, idealmente dos preguntas de cada uno, seleccionadas con una semilla reproducible. Si hay empate, favorecer un grupo no expuesto todavía. En la sesión de 12 preguntas elegir 1 de cada grupo; en la de 16, 3 de cada grupo.
+**Etapa B: 4 adaptativas.** Tras las ocho respuestas, calcular los índices por perfil. Agrupar esos índices por `masculinidad`, `feminidad`, `orientacion`, `roles`, `ambiguedad` y `ruptura`. La afinidad de cada grupo es el promedio de sus **dos índices más altos** (índice de juego, no atributos). Elegir los dos grupos con afinidad más alta, con dos preguntas de cada uno en la sesión de 14 o una en la de 12. La semilla resuelve empates y baraja las preguntas de forma reproducible. El grupo `ruptura` no se incluye obligatoriamente; las anclas Q03/A y Q06/C aportan dos puntos a M16 cada una, además de conservar sus pesos originales.
 
 **Etapa C: 2 preguntas de contraste.** Elegir dos diferentes de `Q29..Q32` cuya temática aporte variedad. Su objetivo es evitar una clasificación lineal: pueden sumar puntos a etiquetas incompatibles. Nunca repetir una pregunta ya vista.
 
@@ -830,7 +884,7 @@ type ScoreDetails = {
 
 **Si el usuario retrocede:** editar la respuesta, volver a calcular puntuaciones desde cero. Si se cambia cualquier respuesta de la fase base, invalidar adaptativas y contraste ya respondidas, avisar de la recomputación, y reconstruir la cola. Si se cambia una respuesta adaptativa, mantener la cola fijada y recalcular solo el resultado. Esto evita rutas inconsistentes.
 
-**Equidad de selección:** ninguna opción debe aumentar el número total de preguntas; cada participante ve 12, 14 o 16 según la configuración. Evitar elegir todos los ítems sobre un mismo tema o dar más oportunidades de puntuar a una sola categoría sin contraste. En QA, ejecutar simulaciones de miles de sesiones para detectar perfiles sistemáticamente favorecidos.
+**Equidad de selección:** ninguna opción debe aumentar el número total de preguntas; cada participante ve 12 o 14 según la configuración. Evitar elegir todos los ítems sobre un mismo tema o dar más oportunidades de puntuar a una sola categoría sin contraste. En QA, ejecutar simulaciones de miles de sesiones para detectar perfiles sistemáticamente favorecidos.
 
 ### 7.3 Pseudocódigo operativo
 
@@ -877,10 +931,10 @@ function chooseSessionQuestions(seed: number): string[] {
 }
 
 function extendAfterCore(seed: number, answers: AnswerRecord[],
-                         targetQuestions: 12 | 14 | 16): string[] {
+                         targetQuestions: 12 | 14): string[] {
   const scores = scoreQuiz(QUESTIONS, answers); // exactamente 8 respuestas aquí
   const topGroups = rankGroups(scores, seed).slice(0, 2);
-  const each = (targetQuestions - 10) / 2; // 12→1, 14→2, 16→3
+  const each = (targetQuestions - 10) / 2; // 12→1, 14→2
   const adaptive = topGroups.flatMap(g =>
     seededShuffle(QUESTIONS_BY_POOL[g], seed + stableHash(g)).slice(0, each)
   );
@@ -908,7 +962,7 @@ function extendAfterCore(seed: number, answers: AnswerRecord[],
 ```text
 Q01 C (concierto pop): H09 +3, H07 +1
 Q02 D (cambiar de plan): H11 +2, M11 +2
-Q03 A (mandar): H01 +2, M13 +2
+Q03 A (mandar): H01 +2, M13 +2, M16 +2
 ...
 Resultado del juego: dos caricaturas pueden puntuar a la vez.
 Revelación: «Que te guste el pop, liderar o cambiar de plan
@@ -983,7 +1037,7 @@ etiquetados/
 | `/jugar` | Quiz y procesamiento | Preguntas adaptativas, progreso y animación de clasificación |
 | `/resultado` | Resultado, revelación y cierre | Etiquetas, explicación pedagógica y reinicio |
 
-Usar `etiquetados` como `name` del paquete y slug del proyecto en Vercel. El `<title>`, la descripción SEO, `og:title`, `og:description`, favicon, textos accesibles y enlaces internos deben usar la marca Etiquetados. Mantener los identificadores del banco (`Q01`–`Q32`, perfiles y opciones) sin cambios.
+Usar `etiquetados` como `name` del paquete y slug del proyecto en Vercel. El `<title>`, la descripción SEO, `og:title`, `og:description`, favicon, textos accesibles y enlaces internos deben usar la marca Etiquetados. Mantener los identificadores originales del banco (`Q01`–`Q32`, perfiles y opciones); las preguntas nuevas son `Q33`–`Q36`.
 
 ### 8.3 Estados y eventos principales
 
@@ -1093,10 +1147,10 @@ No implementar funciones backend: el proyecto solo calcula datos de la sesión e
 
 ### Unitarias (Vitest)
 
-- Banco válido: 32 preguntas, 128 opciones, IDs únicos, pesos enteros positivos `1..3`, cero referencias puntuables a `I01/I02`.
+- Banco válido: 36 preguntas, 144 opciones, 15 perfiles puntuables, IDs únicos, pesos enteros positivos `1..3`, cero referencias puntuables a `I01/I02`.
 - `scoreQuiz`: opción correcta suma pesos exactos; no suma perfiles no listados; normalización está en `0..100`; evidencia contiene ID de pregunta y respuesta.
 - Dos respuestas distintas con el mismo ID se rechazan o reemplazan antes de puntuar; «Atrás» nunca duplica puntos.
-- `selectQuestions`: recorridos de 12, 14 y 16, sin duplicados, exactamente ocho `core` y dos `contrast`, dos grupos adaptativos con número esperado; misma semilla + mismas respuestas = misma ruta.
+- `selectQuestions`: recorridos de 12 y 14, sin duplicados, exactamente ocho `core` y dos `contrast`, dos grupos adaptativos con número esperado; misma semilla + mismas respuestas = misma ruta. Verificar selección opcional de `ruptura` y que M16 pueda liderar con al menos dos apoyos.
 - Perfiles con menos de dos evidencias nunca se presentan como resultado único; empates próximos muestran dos etiquetas.
 - Los escenarios `I01/I02` no pueden figurar en `ScoreDetails`.
 
@@ -1125,7 +1179,7 @@ No implementar funciones backend: el proyecto solo calcula datos de la sesión e
 | Orden | Tarea | Criterio de aceptación |
 |---:|---|---|
 | 1 | Scaffold `etiquetados` con React + TypeScript + Vite + Tailwind + shadcn/ui + Motion | Corre localmente y hace build con la identidad Etiquetados |
-| 2 | Cargar `src/data/questions.json` y validarlo | 32 preguntas, 128 opciones y 14 perfiles puntuables correctos; IDs y pesos sin cambios |
+| 2 | Cargar `src/data/questions.json` y validarlo | 36 preguntas, 144 opciones y 15 perfiles puntuables; identificadores y pesos originales conservados, con señales M16 añadidas en Q03/A y Q06/C |
 | 3 | Construir `scoreQuiz` + pruebas | Pesos, normalización y evidencias comprobados |
 | 4 | Implementar selección de 8+4+2 | 14 preguntas sin repetición y rutas reproducibles |
 | 5 | Crear Welcome + Onboarding + Introducción + Quiz + Procesamiento + Resultado | Recorrido de marca completo, funcional y mobile-first |
@@ -1138,7 +1192,7 @@ No implementar funciones backend: el proyecto solo calcula datos de la sesión e
 - Escenarios interseccionales `I01/I02` interactivos en la explicación final (incluidos como reflexión educativa; no puntúan).
 - Modo facilitador en proyector con historia de reglas usadas sin nombres.
 - Contador local de respuestas y gráfica didáctica, sin guardar identidades.
-- Versión corta 12 preguntas y larga 16, seleccionables al iniciar la experiencia.
+- Versión corta de 12 preguntas, seleccionable al iniciar la experiencia.
 
 ### P2 — Después del curso
 
