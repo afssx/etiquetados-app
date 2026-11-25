@@ -4,6 +4,8 @@
 
 Experiencia web educativa y satírica sobre cómo los estereotipos pueden encasillar injustamente a las personas. El algoritmo del juego usa reglas deliberadamente prejuiciosas; sus etiquetas no describen ni determinan la identidad de quien participa.
 
+El juego no es un test psicológico ni un detector de género, orientación sexual, raza, personalidad o ideología.
+
 ## Ejecución local
 
 Este proyecto se ejecutará solo en local; no se publicará ni se desplegará en un servicio de hosting.
@@ -37,8 +39,8 @@ npm run preview
 ## Estructura
 
 - `src/app/`: interfaz y flujo del juego.
-- `src/data/questions.json`: catálogo de perfiles, preguntas y pesos.
+- [src/data/questions.json](./src/data/questions.json): archivo JSON que contiene las preguntas y los pesos usados por el algoritmo, además del catálogo de perfiles.
 - `src/domain/`: validación y lógica del cuestionario.
-- [PLAN_DESARROLLO_ETIQUETADOS.md](./PLAN_DESARROLLO_ETIQUETADOS.md): especificación del producto y criterios éticos.
+- [PLAN_DESARROLLO_ETIQUETADOS.md](./docs/PLAN_DESARROLLO_ETIQUETADOS.md): desarrollo del producto y criterios éticos.
 
-El catálogo incluye la etiqueta satírica «Mujer feminista»: el juego explica que autonomía, liderazgo y apoyo a la igualdad no permiten inferir el género ni las creencias de una persona, y que la caricatura no define el feminismo. El juego no es un test psicológico ni un detector de género, orientación sexual, raza, personalidad o ideología. `I01` e `I02` son escenarios ficticios; no forman parte del puntaje.
+`I01` e `I02` son escenarios ficticios y no forman parte del puntaje.
